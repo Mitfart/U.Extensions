@@ -4,6 +4,7 @@ using UnityEditor;
 
 namespace Extensions.Editor.Property {
   public static class GetChildrenExt {
+    // Must be list for Unity correct behavior
     public static IList<SerializedProperty> GetChildren(this SerializedProperty property, int maxAmount = int.MaxValue) {
       SerializedProperty rootProperty = property.Copy();
       SerializedProperty currentProp  = property.Copy();
@@ -28,6 +29,7 @@ namespace Extensions.Editor.Property {
 
 
 
-    private static bool ChildOf(this SerializedProperty curProp, SerializedProperty rootProperty) => curProp.propertyPath.Contains(rootProperty.propertyPath);
+    private static bool ChildOf(this SerializedProperty curProp, SerializedProperty rootProperty) 
+      => curProp.propertyPath.Contains(rootProperty.propertyPath);
   }
 }

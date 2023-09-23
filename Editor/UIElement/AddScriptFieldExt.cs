@@ -5,10 +5,10 @@ using UnityEngine.UIElements;
 
 namespace Git.Extensions.Editor {
   public static class AddScriptFieldExt {
-    private const string UNITY_SCRIPT = "m_Script";
+    private const string _UNITY_SCRIPT = "m_Script";
 
     public static VisualElement AddScriptField(this VisualElement root, SerializedObject serializedObject) {
-      SerializedProperty scriptProperty = serializedObject.FindProperty(UNITY_SCRIPT);
+      SerializedProperty scriptProperty = serializedObject.FindProperty(_UNITY_SCRIPT);
 
       if (scriptProperty == null)
         throw new Exception("Cant find Script property");
